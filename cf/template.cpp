@@ -20,6 +20,6 @@ template <class _T> inline string tostr(const _T& a) { ostringstream os(""); os 
 
 
 int main() {
-    //
+    
     return 0;
 }
