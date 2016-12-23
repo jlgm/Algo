@@ -22,8 +22,8 @@ using namespace std;
 #define fr(i,j,k) for (int (i) = (j); (i) < (k); (i)++)
 #define pb push_back
 #define mp make_pair
-#define F first 
-#define S second 
+#define F first
+#define S second
 
 typedef long long ll;
 typedef vector<int> vi;
@@ -36,31 +36,24 @@ template <class _T> inline string tostr(const _T& a) { ostringstream os(""); os 
 int k, a[15];
 
 int main() {
-	
+
 	bool fst = true;
-	
+
 	while(scanf("%d", &k) && k) {
 		fr(i,0,k) scanf("%d", &a[i]);
-		
+
 		if (!fst) puts("");
-	
+
 		fr(i,0,k-5)
-			fr(j,i+1,k-4) 
+			fr(j,i+1,k-4)
 				fr(l,j+1,k-3)
 					fr(m,l+1,k-2)
 						fr(n,m+1,k-1)
 							fr(s,n+1,k)
 								printf("%d %d %d %d %d %d\n", a[i], a[j], a[l], a[m], a[n], a[s]);
-		
+
 		fst = false;
 	}
-	
+
 	return 0;
 }
-
-
-
-
-
-
-

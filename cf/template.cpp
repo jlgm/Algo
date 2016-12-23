@@ -15,11 +15,11 @@ typedef long long ll;
 typedef pair<int, int> pii;
 
 template <class _T> inline string tostr(const _T& a) { ostringstream os(""); os << a; return os.str(); }
-//-------------------------------------------------------
+//------------------------------------------------------------------------------------------------------
 
 
 
 int main() {
-    
+
     return 0;
 }
