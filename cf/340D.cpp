@@ -32,8 +32,6 @@ int main() {
     scanf("%d", &n);
     fr(i,0,n) scanf("%d", &a[i]);
     printf("%d\n", lis(0));
-
-    //fr(i,0,n) cout << "dp" << a[i] << ": " << dp[i] << endl;
-
+    
     return 0;
 }
