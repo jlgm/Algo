@@ -31,11 +31,10 @@ int main() {
     fr(i,1,n+1) fr(j,1,n+1)
         dp[i][j] = 1;
 
-    fr(i,1,n+1) fr(j,1,i)
+    fr(i,1,n+1) fr(j,1,i) {
         dp[i][a[j-1]] = max(1+dp[j][a[i-1]], dp[i][a[j-1]]);
-
-    fr(i,1,n+1) fr(j,1,n+1)
-        ans = max(ans, dp[i][j]);
+        ans = max(ans, dp[i][a[j-1]]);
+    }
 
     printf("%d\n", ans);
 
