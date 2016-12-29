@@ -42,12 +42,6 @@ int main() {
     sort(a, a+n);
     fr(i,0,n) sum[i] = i?(a[i]+sum[i-1]):(a[i]);
 
-    // ll cur;
-    // for(cur = 1; cur < 1000; cur++) {
-    //     if (!can(cur)) break;
-    // }
-    //cout << cur-1 << " " << ans(cur-1) << endl;
-
     ll lo = 1, hi = 10000000000LL, mid;
     while(lo < hi) {
         mid = lo + (hi-lo)/2;
