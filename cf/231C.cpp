@@ -18,21 +18,13 @@ template <class _T> inline string tostr(const _T& a) { ostringstream os(""); os 
 
 ll n, k, a[100005], sum[100005];
 
-bool can(ll c) {
-    for (int i = 0; i <= n-c; i++) {
-        ll x = a[c-1+i]*c;
-        ll y = i?(sum[i+c-1] - sum[i-1]):(sum[c-1]);
-        if (x - y <= k) return true;
-    }
-    return false;
-}
-
-ll ans(ll c) {
+ll can(ll c) {
     for (int i = 0; i <= n-c; i++) {
         ll x = a[c-1+i]*c;
         ll y = i?(sum[i+c-1] - sum[i-1]):(sum[c-1]);
         if (x - y <= k) return a[c-1+i];
     }
+    return -1;
 }
 
 int main() {
@@ -45,11 +37,11 @@ int main() {
     ll lo = 1, hi = 10000000000LL, mid;
     while(lo < hi) {
         mid = lo + (hi-lo)/2;
-        if (!can(mid)) hi = mid;
+        if (can(mid)==-1) hi = mid;
         else lo = mid+1;
     }
 
-    cout << lo-1 << " " << ans(lo-1) << endl;
+    cout << lo-1 << " " << can(lo-1) << endl;
 
     return 0;
 }
