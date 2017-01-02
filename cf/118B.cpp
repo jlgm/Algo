@@ -19,12 +19,9 @@ template <class _T> inline string tostr(const _T& a) { ostringstream os(""); os 
 int n;
 
 void format(int c) {
-    int k = (n-c)*2;
-    fr(i,0,k) printf(" ");
+    fr(i,0,(n-c)*2) printf(" ");
     fr(i,0,c) printf("%s%d", i?" ":"", i);
-    printf("%s%d", c?" ":"", c);
-    for(int i = c-1; i >= 0; i--) printf("%s%d", " ", i);
-    puts("");
+    for(int i = c; i >= 0; i--) printf("%s%d%s", c?" ":"", i, i?"":"\n");
 }
 
 int main() {
@@ -32,8 +29,7 @@ int main() {
     scanf("%d", &n);
 
     fr(i,0,n) format(i);
-    format(n);
-    for(int i = n-1; i >= 0; i--) format(i);
+    for(int i = n; i >= 0; i--) format(i);
 
     return 0;
 }
