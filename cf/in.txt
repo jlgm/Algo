@@ -1,4 +1,6 @@
-3
-20000 South
-10 East
-20000 North
+5
+7500 South
+10000 East
+3500 North
+4444 West
+4000 North
