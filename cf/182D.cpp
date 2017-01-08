@@ -31,21 +31,11 @@ vector<int> divs(int n) {
     return ret;
 }
 
-bool checkA(string s, int k) {
+bool check(string s, int k, bool ab) {
     int size = s.size();
     fr(i,0,k) {
         fr(j,0,size) {
-            if (s[j] != a[i*size+j]) return false;
-        }
-    }
-    return true;
-}
-
-bool checkB(string s, int k) {
-    int size = s.size();
-    fr(i,0,k) {
-        fr(j,0,size) {
-            if (s[j] != b[i*size+j]) return false;
+            if (s[j] != (ab?a[i*size+j]:b[i*size+j])) return false;
         }
     }
     return true;
@@ -68,7 +58,7 @@ int main() {
             if (l != k) continue;
             string tmp = a.substr(0,k);
             string tmp2 = b.substr(0,l);
-            ans += (checkA(tmp, da[i]) && checkB(tmp2, db[j]) && (tmp==tmp2));
+            ans += (check(tmp, da[i], 1) && check(tmp2, db[j], 0) && (tmp==tmp2));
         }
     }
 
