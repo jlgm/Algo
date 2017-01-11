@@ -19,10 +19,6 @@ template <class _T> inline string tostr(const _T& a) { ostringstream os(""); os 
 ll n, a[10], dp[1000005][10];
 string ans;
 
-bool cmp(char a, char b) {
-    return a > b;
-}
-
 ll solve(ll k, ll d) {
     if (k == 0) return 0;
     if (k-a[d] < 0) return 0;
