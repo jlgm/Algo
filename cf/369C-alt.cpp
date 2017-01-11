@@ -41,7 +41,6 @@ int main() {
     }
 
     dfs(1);
-    //fr(i,0,n) printf("%d: %d\n", i+1, dp[i+1]);
     fr(i,0,n) if (dp[i+1] == 1 && p[i+1]) ans.pb(i+1);
 
     printf("%d\n", (int)ans.size());
