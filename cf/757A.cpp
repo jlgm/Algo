@@ -16,32 +16,25 @@ typedef pair<int, int> pii;
 
 template <class _T> inline string tostr(const _T& a) { ostringstream os(""); os << a; return os.str(); }
 
-//use this code to generate personalized inputs
-
-int h[100005], a[100005];
+string s, pok;
+int cnt[1000];
 
 int main() {
 
+    cin >> s;
+    int k = s.size();
 
-    int n, mx = 0;
-    cin >> n;
-    fr(i,0,n) {
-        cin >> a[i];
-        mx = max(mx, a[i]);
-        h[a[i]]++;
+    fr(i,0,k) {
+        cnt[s[i]]++;
     }
 
-    int ret = 1, cnt = 0;
-    fr(i,2,mx+1) {
-        cnt = 0;
-        for(int j = i; j <= mx; j+=i) {
-            if (h[j]) cnt+=h[j];
-        }
-        ret = max(ret,cnt);
-    }
+    pok = "Bulbasaur";
+    cnt['u']/=2; cnt['a']/=2;
 
-    printf("%d\n", ret);
+    k = pok.size(); int ans = s.size();
+    fr(i,0,k) ans = min(ans, cnt[pok[i]]);
 
+    printf("%d\n", ans);
 
     return 0;
 }
