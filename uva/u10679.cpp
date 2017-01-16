@@ -65,9 +65,7 @@ int comp(int suf) {
         if (pattern[i-suf] > s[i]) return -1;
         else if (pattern[i-suf] < s[i]) return 1;
     }
-
     if (k > n-suf) return -1;
-
     return 0;
 }
 
@@ -75,16 +73,16 @@ bool match() {
     if (strlen(s) == 1) return strlen(pattern) == strlen(s) && pattern[0] == s[0];
 
     int lo = 0, hi = n, med;
-    while (hi-lo > 1) { //busca binaria
-        med = (lo+hi)/2;
+    while (lo<=hi) { //busca binaria
+        med = lo + (hi-lo)/2;
         int result = comp(suffix[med]);
         if (result == 0) {
             return true;
         }
         else if (result < 0) {
-            lo = med;
+            lo = med+1;
         }
-        else hi = med;
+        else hi = med-1;
     }
     return false;
 }
