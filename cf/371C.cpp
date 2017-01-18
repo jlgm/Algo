@@ -37,13 +37,7 @@ int main() {
     fr(i,0,3) cin >> p[i];
     cin >> r;
 
-    ans = 0, cost = 0;
-    while(n[0]-c[0] >= 0 && n[1]-c[1] >= 0 && n[2]-c[2] >= 0) {
-        ans += 1;
-        fr(i,0,3) n[i]-=c[i];
-    }
-
-    ll lo = 0, hi = r*2, mid = lo;
+    ll lo = 0, hi = 1e13, mid = lo;
 
     while(lo < hi) {
         mid = lo + (hi-lo)/2;
@@ -51,7 +45,7 @@ int main() {
         else lo = mid+1;
     }
 
-    cout << (hi-1)+ans << endl;
+    cout << (hi-1) << endl;
 
     return 0;
 }
