@@ -18,7 +18,7 @@ template <class _T> inline string tostr(const _T& a) { ostringstream os(""); os 
 
 int n, m, a[5555], dp[5555];//, cnt[5555];
 
-int lis(int v) {
+int lnds(int v) {
     fr(i,0,n){
         int tmp = (int)(upper_bound(dp,dp+v,a[i])-dp);
         if (tmp == v) ++v;
@@ -37,7 +37,7 @@ int main() {
 
     if (m == 1) { puts("0"); return 0; }
 
-    printf("%d\n", n - lis(0));
+    printf("%d\n", n - lnds(0));
 
     return 0;
 }
