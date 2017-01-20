@@ -5,7 +5,7 @@ using namespace std;
 
 #define ms(ar,a) memset(ar, a, sizeof(ar))
 #define fr(i,j,k) for (int (i) = (j); (i) < (k); (i)++)
-#define db(x) cout << (#x) << " = " << x << endl;
+#define db(x) cout << (#x) << " = " << x << " ";
 #define pb push_back
 #define mp make_pair
 #define X first
@@ -24,17 +24,13 @@ int main() {
     cin >> k >> s;
 
     int n = s.size();
-
     fr(i,1,n+1) sum[i] = sum[i-1]+(s[i-1]=='1');
-    // fr(i,0,n) db(sum[i])
 
     ll ans = 0;
     fr(i,1,n+1) {
-        int tmp = sum[i-1] + k;
-        if (sum[n] < tmp) break;
-        int a = lower_bound(sum+i, sum+n+1, tmp)-sum;
-        int b = upper_bound(sum+i, sum+n+1, tmp)-sum;
-        // cout << tmp << " " << a << " " << b << endl;
+        int a = lower_bound(sum+i, sum+n+1, sum[i-1]+k)-sum;
+        int b = upper_bound(sum+i, sum+n+1, sum[i-1]+k)-sum;
+        // db(i) db(a) db(b) puts("");
         ans += (b-a);
     }
 
