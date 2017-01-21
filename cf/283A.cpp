@@ -35,7 +35,7 @@ int main() {
             sum += (val*pos);
         }
         if (t == 2) {
-            int val;
+            ll val;
             scanf("%lld", &val);
             sum += val;
             stk[cur++] = val;
