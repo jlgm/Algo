@@ -22,8 +22,8 @@ char grid[1005][1005];
 
 int solve(bool prev, int cnt, int v) {
     int &ret = memo[prev][cnt][v];
-    if (v == m) return (cnt < x || cnt > y) ? INF : 0;
     if (ret != -1) return ret;
+    if (v == m) return (cnt < x || cnt > y) ? INF : 0;
     if (cnt < x) return ret = cost[v][prev] + solve(prev, cnt+1, v+1);
     else {
         ret = cost[v][!prev] + solve(!prev, 1, v+1);
