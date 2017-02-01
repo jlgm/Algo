@@ -30,17 +30,15 @@ int solve(bool prev, int cnt, int n, int m) {
 
     if (cnt == k[prev]) return ret = solve(!prev, 1, n+((!prev)==0), m+((!prev)==1))%M;
 
-    else {
-        return ret = (solve(prev, cnt+1, n+(prev==0), m+(prev==1))%M
-                + solve(!prev, 1, n+((!prev)==0), m+((!prev)==1))%M)%M;
-    }
+    return ret = (solve(prev, cnt+1, n+(prev==0), m+(prev==1))%M
+            + solve(!prev, 1, n+((!prev)==0), m+((!prev)==1))%M)%M;
 }
 
 int main() {
 
     scanf("%d%d%d%d", &n1, &n2, &k[0], &k[1]);
-    N = n1+n2;
 
+    N = n1+n2;
     ms(dp,-1);
     printf("%d\n", solve(0,0,0,0));
 
