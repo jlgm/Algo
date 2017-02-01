@@ -28,7 +28,7 @@ int solve(bool prev, int cnt, int n, int m) {
     if (n+m == N) return ret = (cnt <= k[prev] && n == n1 && m == n2);
     if (cnt > k[prev] || n > n1 || m > n2) return ret = 0;
 
-    if (cnt == k[prev]) return ret = solve(!prev, 1, n+((!prev) == 0), m+((!prev) == 1))%M;
+    if (cnt == k[prev]) return ret = solve(!prev, 1, n+((!prev)==0), m+((!prev)==1))%M;
 
     else {
         return ret = (solve(prev, cnt+1, n+(prev==0), m+(prev==1))%M
