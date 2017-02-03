@@ -39,20 +39,21 @@ void dfs(int v) {
 
 bool differ(int v, int prev) {
     int k = adj[v].size();
+    bool ans = false;
     fr(i,0,k) {
         int w = adj[v][i];
-        if (w == prev || w == root) continue;
-        if (c[v] != c[w]) {return true;}
-        return differ(w, v);
+        if (w == prev) continue;
+        if (c[v] != c[w]) { return true; }
+        ans = ans || differ(w, v);
     }
-    return false;
+    return ans;
 }
 
 bool validate(int v) {
     int k = adj[v].size();
     fr(i,0,k) {
         int w = adj[v][i];
-        if (differ(w, -1)) return false;
+        if (differ(w, v)) { return false;}
     }
     return true;
 }
