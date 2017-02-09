@@ -22,26 +22,13 @@ int h[100005], a[100005];
 
 int main() {
 
-
-    int n, mx = 0;
-    cin >> n;
-    fr(i,0,n) {
-        cin >> a[i];
-        mx = max(mx, a[i]);
-        h[a[i]]++;
+    puts("999");
+    int k = 0;
+    fr(i,1,1000) {
+        printf("%d ", i+k);
+        if (i&1) k+=2;
+        else k++;
     }
-
-    int ret = 1, cnt = 0;
-    fr(i,2,mx+1) {
-        cnt = 0;
-        for(int j = i; j <= mx; j+=i) {
-            if (h[j]) cnt+=h[j];
-        }
-        ret = max(ret,cnt);
-    }
-
-    printf("%d\n", ret);
-
 
     return 0;
 }
