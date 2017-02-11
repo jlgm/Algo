@@ -21,11 +21,11 @@ int main() {
 
     scanf("%lld", &n);
     fr(i,0,n) fr(j,0,n) scanf("%lld", &adj[i][j]);
-    fr(i,0,n) fr(j,0,n) d[i][j] = adj[i][j];
     fr(i,0,n) scanf("%lld", &v[i]), v[i]--;
 
-    fr(l,0,n) {
-        ll t = v[n-1-l];
+    fr(i,0,n) fr(j,0,n) d[i][j] = adj[i][j];
+    fr(k,0,n) {
+        ll t = v[n-1-k];
         mark[t] = 1;
 
         fr(i,0,n) fr(j,0,n)
@@ -35,7 +35,7 @@ int main() {
         fr(i,0,n) fr(j,0,n)
             if (mark[i] && mark[j]) sum += d[i][j];
 
-        ans[n-1-l] = sum;
+        ans[n-1-k] = sum;
     }
 
     fr(i,0,n) printf("%s%lld", i?" ":"", ans[i]);
