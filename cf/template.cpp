@@ -5,6 +5,7 @@ using namespace std;
 
 #define ms(ar,a) memset(ar, a, sizeof(ar))
 #define fr(i,j,k) for (int (i) = (j); (i) < (k); (i)++)
+#define rf(i,j,k) for (int (i) = (j); (i) >= (k); (i)--)
 #define db(x) cout << (#x) << " = " << x << endl;
 #define pb push_back
 #define mp make_pair
