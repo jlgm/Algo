@@ -15,7 +15,7 @@ using namespace std;
 typedef long long ll;
 typedef pair<int, int> pii;
 
-#define MOD 997 //(prime number)
+#define MOD 1000000007 //(prime number)
 #define B 256 //size of alphabet
 
 string text, pattern;
