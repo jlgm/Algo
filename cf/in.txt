@@ -1,19 +1,2 @@
-9 9
-caccbcacabccba
-aacbcbcaabacbcbcba
-babccaaacccacbb
-caaabcaacbababbabbb
-abbaccacabacaaaa
-bccbccababcaacb
-caacbcaacbababbabbb
-bcacababbbcaaca
-ccbbcbababbccaab
-bbcbccababcaacb
-aacccbabbacbabacaca
-bbcbcccbabcaacb
-acbacacbcacc
-caaabcaaabacabbabbb
-abbbabaaaba
-aacccbcaabacbcbcba
-abbaccacabbcaaaa
-aaccbbcabbacbcbcba
+4 2
+2 0 1 3

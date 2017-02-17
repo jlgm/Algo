@@ -53,7 +53,7 @@ int main() {
     fr(i,0,n) scanf("%d", &a[i]);
 
     build(1,0,n-1);
-    printf("%d\n", qq(0,5));
+    printf("%d\n", qq(0,5)); //qq return the index of minimum value in range (i,j)
 
     return 0;
 }
