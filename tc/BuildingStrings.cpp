@@ -28,33 +28,33 @@ public:
 
 vector <string> BuildingStrings::findAny(int K) {
 	vector<string> ans;
-	
+
 	while(K>=1250) {
 		ans.pb("aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyy");
 		K-=1250;
 	}
-	
+
 	while (K>=200) {
 		ans.pb("aabbccaabbccaabbccaabbccaabbccaabbccaabbccaabbccdd");
 		K-=200;
 	}
-	
+
 	if (K >= 100) {
-		ans.pb("aabbccaabbccaabbccaabbccaabbccaabbccaabbccaabbccdd");
+		ans.pb("ababababababababababababababababababababababababab");
 		K-=100;
 	}
-	
+
 	if (K >= 50) {
 		ans.pb("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 		K-=50;
 	}
-	
+
 	string last = "";
 	while(K--) {
 		last.pb('a');
 	}
-	ans.pb(last);
-	return ans;		
+	if (last != "") ans.pb(last);
+	return ans;
 }
 
 
@@ -257,27 +257,27 @@ double test4() {
 int main() {
 	int time;
 	bool errors = false;
-	
+
 	time = test0();
 	if (time < 0)
 		errors = true;
-	
+
 	time = test1();
 	if (time < 0)
 		errors = true;
-	
+
 	time = test2();
 	if (time < 0)
 		errors = true;
-	
+
 	time = test3();
 	if (time < 0)
 		errors = true;
-	
+
 	time = test4();
 	if (time < 0)
 		errors = true;
-	
+
 	if (!errors)
 		cout <<"You're a stud (at least on the example cases)!" <<endl;
 	else
