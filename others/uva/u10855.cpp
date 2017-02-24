@@ -45,7 +45,9 @@ void rotate() {
 
 int main() {
 
-    while(scanf("%d%d", &n, &m) && (n||m)) {
+    std::ios::sync_with_stdio(false);
+
+    while((cin >> n >> m) && (n||m)) {
         string tmp;
         fr(i,0,n) {
             cin >> tmp;
@@ -55,15 +57,15 @@ int main() {
             cin >> tmp;
             pattern.pb(tmp);
         }
-        printf("%d ", count());
+        cout << count() << " ";
         rotate();
-        printf("%d ", count());
+        cout << count() << " ";
         rotate();
-        printf("%d ", count());
+        cout << count() << " ";
         rotate();
-        printf("%d\n", count());
+        cout << count() << endl;
         grid.clear(); pattern.clear();
     }
-    
+
     return 0;
 }
