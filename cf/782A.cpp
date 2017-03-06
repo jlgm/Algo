@@ -20,12 +20,12 @@ bool mark[100005];
 
 int main() {
 
-    scanf("%d", &n);
     int ans = 0, cur = 0;
-    fr(i,0,(n*2)) {
+    scanf("%d", &n);
+    fr(i,0,(2*n)) {
         scanf("%d", &p);
-        if (!mark[p]) cur++;
-        else cur--;
+        if (mark[p]) cur--;
+        else cur++;
         mark[p] = true;
         ans = max(ans,cur);
     }
