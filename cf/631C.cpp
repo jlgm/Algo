@@ -23,7 +23,7 @@ int main() {
     fr(i,1,n+1) scanf("%d", &a[i]), inc[i]=a[i];
     fr(i,1,m+1) {
         scanf("%d%d", &t[i], &r[i]);
-        up[r[i]] = max(up[r[i]], i);
+        up[r[i]] = i;
         mx = max(mx,r[i]);
     }
 
