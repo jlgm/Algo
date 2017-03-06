@@ -23,11 +23,6 @@ struct f {
 int n;
 f fs[60006];
 
-bool cmp(f v, f w) {
-    if (v.x == w.x) return v.v > w.v;
-    return v.x < w.x;
-}
-
 bool can(double t) {
     double R = fs[0].x + t*fs[0].v;
     double L = fs[0].x - t*fs[0].v;
